@@ -101,6 +101,7 @@ public class registerActivity extends AppCompatActivity {
 
                                 Toast.makeText(registerActivity.this, "Please verify your email", Toast.LENGTH_SHORT).show();
                                 startActivity(new Intent(registerActivity.this, LoginActivity.class));
+                                //getUserLevel();
                             }
                         }
                     });

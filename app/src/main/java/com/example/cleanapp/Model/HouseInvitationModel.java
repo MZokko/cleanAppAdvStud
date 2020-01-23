@@ -1,6 +1,6 @@
 package com.example.cleanapp.Model;
 
-public class HouseInvitation {
+public class HouseInvitationModel {
 
     //owner info
     String idHouse,idOwner;
@@ -15,7 +15,7 @@ public class HouseInvitation {
     //constructor
 
 
-    public HouseInvitation() {
+    public HouseInvitationModel() {
     }
 
     //GETTER SETTER
