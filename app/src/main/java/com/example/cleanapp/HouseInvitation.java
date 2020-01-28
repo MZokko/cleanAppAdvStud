@@ -24,7 +24,7 @@ public class HouseInvitation extends AppCompatActivity {
     protected EditText phoneNumberTenant;
     protected Button validationBtn;
     protected HouseInvitationModel myHouseInvitation;
-    FirebaseAuth myFirebaseAuth;
+    FirebaseAuth myFirebaseAuth = FirebaseAuth.getInstance();
     DatabaseReference getHouseInvitation = FirebaseDatabase.getInstance().getReference().child("Invitation House");
     String houseID;
 
@@ -38,44 +38,42 @@ public class HouseInvitation extends AppCompatActivity {
 
         setContentView(R.layout.activity_house_invitation);
 
-
-
-
-        //myFirebaseAuth = FirebaseAuth.getInstance();
-
         myToolbar = findViewById(R.id.toolbar2);
-
         phoneNumberTenant = findViewById(R.id.editText);
         validationBtn = findViewById(R.id.valdBtn);
         myHouseInvitation = new HouseInvitationModel();
-        //get n set the info owner to fill house invitation model
-        //myHouseInvitation.setIdOwner(myFirebaseAuth.getCurrentUser().getUid());
-        //datasnapshot from house .userID
-
-        //get n set info Tenant
 
         validationBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.d("STATE","Start click action");
-                //start the houseInvitation
-                //prepHouseInvit();
-                //add myHouseInvitation to db
-                Log.d("FIREPATH", getHouseInvitation.child(phoneNumberTenant.getText().toString()).toString());
-                getHouseInvitation.child(phoneNumberTenant.getText().toString());
-                getHouseInvitation.child(phoneNumberTenant.getText().toString()).child("House id").setValue(houseID);
-                Log.d("try",houseID);
+                prepHouseInvit();
+                addHouseInviteDB();
+                phoneNumberTenant.setText("");
+                Toast.makeText(HouseInvitation.this, "Your invitation have been sent",Toast.LENGTH_SHORT).show();
+                backToTenantList();
             }
         });
 
 
     }
-
+protected  void addHouseInviteDB()
+{
+    getHouseInvitation.child(phoneNumberTenant.getText().toString());
+    getHouseInvitation.child(phoneNumberTenant.getText().toString()).child("House id").setValue(myHouseInvitation.getIdHouse());
+    getHouseInvitation.child(phoneNumberTenant.getText().toString()).child("Owner Key").setValue(myHouseInvitation.getIdOwner());
+    getHouseInvitation.child(phoneNumberTenant.getText().toString()).child("Message").setValue(myHouseInvitation.getMessageInvitation());
+    getHouseInvitation.child(phoneNumberTenant.getText().toString()).child("isRead").setValue(myHouseInvitation.getRead());
+}
     protected void prepHouseInvit()
     {
         myHouseInvitation.setIdOwner(myFirebaseAuth.getCurrentUser().getUid());
         myHouseInvitation.setIdHouse(houseID);
-        myHouseInvitation.setOwnerPhone(Integer.parseInt(phoneNumberTenant.getText().toString()));
+        myHouseInvitation.setTenantPhone(phoneNumberTenant.getText().toString());
+        myHouseInvitation.setMessageInvitation("Hi,you have been added to a new house by the owner :");
+    }
 
+    protected void backToTenantList(){
+        Intent i = new Intent(HouseInvitation.this, TenantList.class);
+        startActivity(i);
     }
 }

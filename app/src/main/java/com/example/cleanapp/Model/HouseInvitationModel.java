@@ -3,12 +3,12 @@ package com.example.cleanapp.Model;
 public class HouseInvitationModel {
 
     //owner info
-    String idHouse,idOwner;
-    int ownerPhone;
+    String idHouse,idOwner,ownerPhone;
 
     //tenant info
-    String idTenant , mailTenant;
-    int tenantPhone;
+    String idTenant , mailTenant,tenantPhone;
+    //boolean read
+    Boolean read=false;
 
     String messageInvitation;
 
@@ -20,6 +20,22 @@ public class HouseInvitationModel {
 
     //GETTER SETTER
 
+
+    public String getOwnerPhone() {
+        return ownerPhone;
+    }
+
+    public Boolean getRead() {
+        return read;
+    }
+
+    public void setRead(Boolean read) {
+        this.read = read;
+    }
+
+    public void setOwnerPhone(String ownerPhone) {
+        this.ownerPhone = ownerPhone;
+    }
 
     public String getIdHouse() {
         return idHouse;
@@ -35,14 +51,6 @@ public class HouseInvitationModel {
 
     public void setIdOwner(String idOwner) {
         this.idOwner = idOwner;
-    }
-
-    public int getOwnerPhone() {
-        return ownerPhone;
-    }
-
-    public void setOwnerPhone(int ownerPhone) {
-        this.ownerPhone = ownerPhone;
     }
 
     public String getIdTenant() {
@@ -61,11 +69,11 @@ public class HouseInvitationModel {
         this.mailTenant = mailTenant;
     }
 
-    public int getTenantPhone() {
+    public String getTenantPhone() {
         return tenantPhone;
     }
 
-    public void setTenantPhone(int tenantPhone) {
+    public void setTenantPhone(String tenantPhone) {
         this.tenantPhone = tenantPhone;
     }
 
