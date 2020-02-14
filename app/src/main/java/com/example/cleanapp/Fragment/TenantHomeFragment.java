@@ -126,6 +126,7 @@ public class TenantHomeFragment extends Fragment {
                     }else{
                         homepageCard.setVisibility(getView().VISIBLE);
                         notificationText.setText("You have an invite from " + inviteModel.getIdHouse());
+                        agreeBtn.setVisibility(getView().VISIBLE);
                     }
                 }else{
                     homepageCard.setVisibility(getView().VISIBLE);
@@ -145,7 +146,7 @@ public class TenantHomeFragment extends Fragment {
 
     void getTaskList(){
         getTask = FirebaseDatabase.getInstance().getReference().child("House").child(inviteModel.getIdOwner()).child(inviteModel.getIdHouse()).child("TaskAssign");
-        getTask.addListenerForSingleValueEvent(new ValueEventListener() {
+        getTask.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 

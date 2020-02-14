@@ -64,12 +64,7 @@ public class OwnerTenantViewAdapter extends RecyclerView.Adapter<OwnerTenantView
         holder.cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//              Intent intent = new Intent(v.getContext(), RoomDetailModal.class);
-//                intent.putExtra("Room Name", roomName);
-//                intent.putExtra("Room Description", room_desc);
-//                intent.putExtra("Room ID",roomID);
-//                intent.putExtra("House ID", houseID);
-//                v.getContext().startActivity(intent);
+
                 context= v.getContext();
                 AlertDialog.Builder builder = new AlertDialog.Builder(context);
                 builder.setMessage("Are you sure, You want to remove the tenant from your house?" )

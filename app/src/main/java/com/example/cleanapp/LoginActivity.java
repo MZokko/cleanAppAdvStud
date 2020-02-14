@@ -51,6 +51,7 @@ public class LoginActivity extends AppCompatActivity {
         btnLogin = findViewById(R.id.btnLogin);
         btnRegister = findViewById(R.id.btnRegister);
         myFirebaseAuth = FirebaseAuth.getInstance();
+//        FirebaseAuth.getInstance().signOut();
 
 
         myAuthStateListener = new FirebaseAuth.AuthStateListener()
