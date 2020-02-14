@@ -172,7 +172,6 @@ public class LoginActivity extends AppCompatActivity {
 
     void verifyDialog(){
         FirebaseUser user = myFirebaseAuth.getCurrentUser();
-        FirebaseAuth.getInstance().signOut();
 
         AlertDialog.Builder builder = new AlertDialog.Builder(LoginActivity.this);
         builder.setTitle("Verify account")
