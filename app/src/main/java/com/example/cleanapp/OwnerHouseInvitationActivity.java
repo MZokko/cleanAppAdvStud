@@ -110,8 +110,8 @@ public class OwnerHouseInvitationActivity extends AppCompatActivity {
 
     protected  void addHouseInviteDB(){
         getHouseInvitation.child(phoneNumberTenant.getText().toString());
-        getHouseInvitation.child(phoneNumberTenant.getText().toString()).child("House id").setValue(myHouseInvitation.getIdHouse());
-        getHouseInvitation.child(phoneNumberTenant.getText().toString()).child("Owner Key").setValue(myHouseInvitation.getIdOwner());
+        getHouseInvitation.child(phoneNumberTenant.getText().toString()).child("idHouse").setValue(myHouseInvitation.getIdHouse());
+        getHouseInvitation.child(phoneNumberTenant.getText().toString()).child("idOwner").setValue(myHouseInvitation.getIdOwner());
         getHouseInvitation.child(phoneNumberTenant.getText().toString()).child("isRead").setValue(myHouseInvitation.getisRead());
 
     }

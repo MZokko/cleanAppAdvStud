@@ -186,7 +186,7 @@ public class OwnerCalendarFragment extends Fragment {
         String date = new SimpleDateFormat("yyyy-MMM-dd", Locale.getDefault()).format(new Date());
         Log.d("Date", "Current date: " + date);
 
-        addTaskHistory = FirebaseDatabase.getInstance().getReference().child("House").child(userID).child(houseID).child("TaskHistoryModel");
+        addTaskHistory = FirebaseDatabase.getInstance().getReference().child("House").child(userID).child(houseID).child("TaskHistory");
 
         getTaskAssign = FirebaseDatabase.getInstance().getReference().child("House").child(userID).child(houseID).child("TaskAssign");
         getTaskAssign.addListenerForSingleValueEvent(new ValueEventListener() {

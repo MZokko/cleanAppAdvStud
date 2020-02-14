@@ -173,6 +173,9 @@ public class LoginActivity extends AppCompatActivity {
     void verifyDialog(){
         FirebaseUser user = myFirebaseAuth.getCurrentUser();
 
+//        FirebaseAuth.getInstance().signOut();
+
+
         AlertDialog.Builder builder = new AlertDialog.Builder(LoginActivity.this);
         builder.setTitle("Verify account")
                 .setMessage("Your email is not verified yet. Please click on the button below to send a verification email")

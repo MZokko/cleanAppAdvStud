@@ -14,7 +14,7 @@ import com.example.cleanapp.R;
 
 public class OwnerProfileFragment extends Fragment {
 
-    String userid, userName, userNumber, userAddress, userPassword;
+    String userid, userFullName, userNumber, userAddress;
 
     @Nullable
     @Override
