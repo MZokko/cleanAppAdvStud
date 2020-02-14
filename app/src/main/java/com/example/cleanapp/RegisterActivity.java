@@ -1,5 +1,4 @@
 package com.example.cleanapp;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
@@ -132,8 +131,8 @@ public class RegisterActivity extends AppCompatActivity {
             @Override
             public void onClick(View v)
             {
-             Intent i = new Intent(RegisterActivity.this, LoginActivity.class);
-             startActivity(i);
+                Intent i = new Intent(RegisterActivity.this, LoginActivity.class);
+                startActivity(i);
             }
         });
     }
@@ -216,5 +215,3 @@ public class RegisterActivity extends AppCompatActivity {
         }
     }
 }
-
-

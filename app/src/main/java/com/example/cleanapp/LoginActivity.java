@@ -52,6 +52,7 @@ public class LoginActivity extends AppCompatActivity {
         btnRegister = findViewById(R.id.btnRegister);
         myFirebaseAuth = FirebaseAuth.getInstance();
 
+
         myAuthStateListener = new FirebaseAuth.AuthStateListener()
         {
             @Override
